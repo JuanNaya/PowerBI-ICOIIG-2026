@@ -1,0 +1,32 @@
+# Power BI Files
+*.pbix.tmp
+*.pbix~
+*.pbit.tmp
+*.pbit~
+
+# Archivos temporales de Office
+~$*.xlsx
+~$*.pptx
+~$*.docx
+.~lock.*
+
+# Carpetas del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de respaldo
+*.bak
+*.backup
+
+# Logs
+*.log
+
+# Carpetas de IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos de configuración local
+.env
+config.local.json
