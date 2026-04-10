@@ -1,0 +1,78 @@
+let
+    // Definir fechas inicial y final del calendario
+    MinDate = #date(2023, 1, 1),
+    MaxDate = #date(2026, 12, 31),
+    
+    // Calcular días transcurridos entre ambas fechas
+    DaysElapsed = Number.From(MaxDate - MinDate),
+    
+    // Crear lista de fechas consecutivas
+    DatesList = List.Dates(MinDate, DaysElapsed + 1, Duration.From(1)),
+    
+    // Convertir lista de fechas a tabla
+    RawDatesTable = Table.FromList(DatesList, Splitter.SplitByNothing(), {"Date"}, null, ExtraValues.Error),
+    
+    // Aplicar tipo de dato fecha a la columna
+    ChangedType1 = Table.TransformColumnTypes(RawDatesTable, {{"Date", type date}}),
+    
+    // Agregar columna Dia (número del día del mes)
+    InsertedDay = Table.AddColumn(ChangedType1, "Día", each Date.Day([Date]), Int64.Type),
+    
+    // Agregar columna Mes (número del mes)
+    Mes = Table.AddColumn(InsertedDay, "Mes", each Date.Month([Date]), Int64.Type),
+    
+    // Agregar columna Año
+    InsertedYear = Table.AddColumn(Mes, "Año", each Date.Year([Date]), Int64.Type),
+    
+    // Agregar nombre completo del mes
+    NombreMes = Table.AddColumn(InsertedYear, "Nombre del mes", each Date.MonthName([Date]), type text),
+    
+    // Agregar nombre reducido del mes (3 primeras letras)
+    NombreMesReducido = Table.AddColumn(NombreMes, "Mes_", each Text.Start([Nombre del mes], 3), type text),
+    
+    // Agregar dia de la semana (1=Lunes, 7=Domingo)
+    DiaSemana = Table.AddColumn(NombreMesReducido, "Día de la semana", each Date.DayOfWeek([Date]) + 1, Int64.Type),
+    
+    // Agregar nombre completo del día de la semana
+    NombreDia = Table.AddColumn(DiaSemana, "Nombre del día", each Date.DayOfWeekName([Date]), type text),
+    
+    // Agregar nombre reducido del día (3 primeras letras)
+    NombreDiaReducido = Table.AddColumn(NombreDia, "Día_", each Text.Start([Nombre del día], 3), type text),
+    
+    // Agregar semana del año
+    SemanaAnio = Table.AddColumn(NombreDiaReducido, "Semana del año", each Date.WeekOfYear([Date]), Int64.Type),
+    
+    // Poner en mayúsculas cada palabra de nombres de días y meses
+    PonerEnMayusculas = Table.TransformColumns(SemanaAnio, {{"Día_", Text.Proper, type text}, {"Nombre del día", Text.Proper, type text}, {"Mes_", Text.Proper, type text}, {"Nombre del mes", Text.Proper, type text}}),
+    
+    // Agregar día del año (1-365/366)
+    DiaDelAnio = Table.AddColumn(PonerEnMayusculas, "Día del año", each Date.DayOfYear([Date]), Int64.Type),
+    
+    // Agregar fecha de inicio del mes
+    InicioMes = Table.AddColumn(DiaDelAnio, "Inicio Mes", each Date.StartOfMonth([Date]), type date),
+    
+    // Agregar fecha de inicio del año
+    InicioAnio = Table.AddColumn(InicioMes, "Inicio Año", each Date.StartOfYear([Date]), type date),
+    
+    // Agregar fecha de fin del mes
+    FinMes = Table.AddColumn(InicioAnio, "Fin Mes", each Date.EndOfMonth([Date]), type date),
+    
+    // Agregar fecha de fin del año
+    FinAnio = Table.AddColumn(FinMes, "Fin Año", each Date.EndOfYear([Date]), type date),
+    
+    // Agregar columna AñoMes en formato YYYYMM
+    AnioMes = Table.AddColumn(FinAnio, "AñoMes", each [Año] * 100 + [Mes], Int64.Type),
+    
+    // Agregar número de trimestre (1-4)
+    NumTrimestre = Table.AddColumn(AnioMes, "Num.Trimestre", each Date.QuarterOfYear([Inicio Mes]), Int64.Type),
+    
+    // Agregar número de bimestre (1-6)
+    CrearBimestre = Table.AddColumn(NumTrimestre, "Num.Bimestre", each Number.RoundUp([Mes] / 2), type number),
+    
+    // Agregar número de semestre (1-2)
+    CalculaSemestre = Table.AddColumn(CrearBimestre, "Num.Semestre", each Number.RoundUp([Mes] / 6), type number),
+    
+    // Renombrar columna Date a Fecha
+    NombreFecha = Table.RenameColumns(CalculaSemestre, {{"Date", "Fecha"}})
+in
+    NombreFecha
