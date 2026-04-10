@@ -1,0 +1,671 @@
+{
+  "name": "Contoso_Temperature",
+  "icons": [
+    {
+      "description": "LogoContoso_Simple",
+      "url": "data:image/jpeg;base64,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"
+    },
+    {
+      "description": "1",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7ZiNbYMwEIVfpQ6QDXIjZIOwQbtBvEG7QegE6QbpBhkhI6QbJJ0g3aD1ibNMDQZjzI8qPumUALZ5nI/zGWBhwcsDxmOlLdO2lv/f2r60fWq7YWYobWdtPyW7OscXbTvMgA0KMSyKRbOotdOGUDzUCfZhMkzEK6wHt4F9CHZGcoxMWXAMe4wsnGAF97mxEZ5hBK5i5RvniOMsY60wIAqFyHIM9xGeSd8XDMhZzKWPcN+YSeApZGG+XBsrXEm/NQYgk8E3DW1ihBOandELJYO3ESO8EtePGJc3+c2d3yZucDJIatGmEGqiq3AKGDMKM+2biD55QxuSNk9IDMFWa11zaptwJdcJCeFwMKtgbE5tEs7jxdYwXt613VF4IkN8vVAnnDBAulOohkSfesEVXq5jkkAoPHwMPB+KEW6qREJCjBeo5pqSG7Lwrh7n9kZw0kIpR7sXnlF4nB8sNF1lGEjwswy6D2hLsBvYiwjhPG68v5JjPn+G3Ut2yfXBIk4113L4XxoF60GfsdjkCwhgMwM553M0e5+k313a7Eq2xYA7kxzVXYnhCL9g3uSa2E467W3wzULj2MDe+5B+Bwy8z3MhdE/yG9hwSLqahXKEPx/XUf7mEdonKUZAiLcINm0dMBHUQUAGGw5bTEhoHHOVZ/IsYULaPgcwBBsOg35M6YJvIWHKdcWk4eBCqFZyPAMmHE4YOfeGQrDCFezLNptw8EH4W6mNuhT3ZZahsLDwX/gFv1LHubEvKNEAAAAASUVORK5CYII="
+    },
+    {
+      "description": "5",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAtCAYAAADV2ImkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEBSURBVHgB7dnBDYJQEATQ0ViAJdiBdiAdaAdiBWIFYgXagS3YgVKBlkAJdqD7w/fg7Q/sxkD2JXMDHBPgMADO/RiBl0nmkim6qyR35gS2cCk5SF4xXUxjzpI9DOSSt2QHPUW85goGLpIb9D3itZOMwamhj7q12MJ/NwFnjeYtoSk8eHXqwWzhWnKFrpw5mC38lByhK2MO7t097IWteWFrXtiaF7bmha15YWte2JoXtuaFrXlha4MfUhZo1ktNMxgOKTOQw0fiNZOxhcPqs4UuahEd/EO3QI+ElTys5QX0fBf4TeoJ7DeOU/wRzW8cJYiBsc1XpCV0NuLwh8MaWsG59j40SSJVEfq0vAAAAABJRU5ErkJggg=="
+    },
+    {
+      "description": "2",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFfSURBVHgB7ZjvTcMwEMUfqN8bJsAb0A0IG3QDMkI3aEboBlmBDVo2gAkIExAmAJ9ygTTyXdJUcvrnftKTpT7n/GQ5Vc6AYRjG1XCjeAuvBNNReb0d8kDu9XMCykPhQjtNu/vltWGF2PC8TPCfvAqvJeTdevEqvVaCv2Ldod71P2YIhwYv9okwFc+T/LI1T6uh+e88ztEJfYsz5CxDzxQv80oFj36n41EIfnPEcvwflS6OVSh+EC20U7yyZ07SGt2RNQbhUP/dPGM8Kdd4xHgyrnHfNexFjIWFjoWFjoWFjoWFjoWFjoWFjkWosXVeH6h7xArjoG/hxZE1XEt7faTWBNBipeClPO4gLwh+Xgq9ZG8HGYeB0MS+JoBapK3ip+hvAraQWy0igzUBExM6080ZpBfpVXgugd60Nk0p+dJlDHpqPPD4jYGscRp3eetQuL5b0zmmg3b4oFtTwzCMC+QXA8J/XR36ZCsAAAAASUVORK5CYII="
+    },
+    {
+      "description": "6",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH/SURBVHgB7ZjvTcMwEMUfiO/NBpgJCBu0E9ARwgS0EzRMAExAmIAyQcMELRPUG8AG4NNdaUicP3YDbSX/pJNa23l6Se7OSYBAIBAIBHrmxDI2MXGLw+DTxKuJtDhYNp2YeDKRmdDYPwrsaQw2b2VmYo3DgvzMigOnOEKO0vQZ3InAuRahH3I44mo6BXeWvgwT2sQzSh2iCRfTD2DDKbZXh6o6AbemYQeNHHzCpEXdYCDHU6Gdm7iBB3XdIzHxBXv/jmVuhmYSWRc3zF1b5irdo0yd6YVEHS9ob5VL8B5Qx0J0yni3PGVi1TCfy5om4haNFex3oUJX05SzTcWnZE2bhmrR0OhAV9NzcNEpy1wkc/MWjQycu7aTV6KRw4O6nI5kfI3fxuk35eoH2tNDybplae2wRntDJae7tjy6tSNwsZAI5d9mkyE0mousqBNbNLTo6w4aTn1am7gA3+JL+G0wuvSfTiI38Yb2mvjBZxvPsGfCU95/4ZMeRRT80fBkF9P0LnkPf6bgBydnfE0rcO/M4FeYYzmeNiQNR3xfAqhfU4uawqFVFXgHGyedK1cNn0JMwcZH8DMMbDcr0ml7pK3ganrzTSTF7p8YtIk70Zy4HFhOD9paFXhL1pb1Exn3ukI1aNEaWOYULE9/ti9MJDBGv++Bu0Ad5hGBQCAQCPwl31hnbeRy7E8jAAAAAElFTkSuQmCC"
+    },
+    {
+      "description": "4",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIKSURBVHgB7Zj/UcIwFMe/cv4PG5gNZAPqBOIE1glgA2QCdQLqBOgE4ATiBMQJ0Akw7/J65aChSZPag8vn7l09+p58m74fCUAkEonU4QL+jJVdO/h/KXuGB76iU2UzZStlP5YxibIbZUu0gFC2VraAGwuO66EFaIU30OJdEBz3hJpcVtxPlA1Q/sUpdD5LuCGVTVGILksryvs3OCKgX+H2iM3hx6Li/6/h+BZnHDRAOwjUqBd60hHaZcQ6Dgq2U+Is+Grbwpril6/d/RsdnCBV3cOVvrIh9ISkvyX04HmBe5cxEnKlaTR/QucipdaSr/QQVFS1+7INAroA7h1iMo6ZoHzSTfj+DPakHHNl4yzgJvrR0j9hvzHsSNGQaFpVevW2K0gpsoHdviOFQbRvTifQDzm19KeCJMFeQ8tXNHUJKjZp6S/Zvw8PQnQP1yHkPbR8RZMAAfu9cY/9vYT7in7nq22nGe7F1cJXtIQeItTGqlZbQPfrDJ7TMUROP0ALpm2kMPjQ5/n+27bTGAmx95DQB1USRcKXyl5R5Dt1iny03yHgHmQXAfcxnsflh4fdEwgNE9N4P0YKw3AJucuT0KlC0Op2+bNvBCb01jRnhQY5yUPA2YiWKCq/TfICPKgJU05nKH6I+cD/c8vfn7kEUXui9rVt0eYwtMmqX00FLE8OgZFooFVGIpHICfIHuFucjOQBnNIAAAAASUVORK5CYII="
+    },
+    {
+      "description": "3",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFZSURBVHgB7ZiBUcIwFIZ/vQ7ABnaEOgF1AusE1hGcAB3BCXQD2QCcwG5A3YAN8IWkRygkJSE84O59d//laJLmDzzavAcIgiDEcAMeStIz4lmS3k3LYjonLUhNt2gEhZn/ACZq0grHMYHe+JpbXCFimotzmp5Bx/o+Fb6JWe/zCPrR5J0USO64/kIaO/oaeMh6N1e7V8ZbxD+e+owc11ujYGzTE9Pex97MQU36RELsmFYhMUVawyfB/qbVz5gqJA6hgPu/M/V5yXA+VDhWjr5fXKjpJ0QiLxcuxDQXYpoLMc2FmObCNt1C1ye4yUnfpLdDJ9hnD1UMUUmAOvv+IB3jgf7u4FSZtf8QSA1dX1idQC4q0z+Df2MLJKA0i90NjKshxRoxzUdI5lJik7ErutLAV2/cK7brFq1pvSnUAF3SvSbE9BK7mXrjGGczh06tHhHPnPQBQRCEo/gH9KFT7Tm+CVMAAAAASUVORK5CYII="
+    },
+    {
+      "description": "7",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFcSURBVHgB7ZmNTcMwEIUfqAOwAR6hGxAmoBvgDQoTwAgwATABYoKwATAB3oBuAHeyEalEbCM7zgXdJz21iq/S0+l+khRQlFEOUB9D6kjHpB3pieQgFEPqSZ9B74Pvj+FcFAbeJOuMdBSu86cdnBkIImXKDGJEYOFLwCTiuhB3DgFwvfaZsX2IL+IQ5RjkTweOW6OQGqb/AjemQyE1TD/D12sOnGUHAXTwDXaRiLMh7gRCuCd9YDzjXTi/gyC4Vr+3IRvbwBu1g+s9fpaOKCz21zfrhbTFAuBMT1a/U428HSak9ZyuwiJNrzAPY6PvjXSDBHOY5rFnRs4cMpjDNDfpKQrQRmzFIk3HMNh/um6p6H1KrBG3wbhFW9jsNemKdPlbwCrxY0d6QHs2iGRaG7EVaroVaroV/9K0yKfn2HLhG3KL/JeLteBErRHZxKm/LyzmeSP0SrqFoihKVb4A3nldtCaf9iUAAAAASUVORK5CYII="
+    },
+    {
+      "description": "8",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHhSURBVHgB7ZmBUYMwFIa/cwJG+EfRCXQDs4EjyCZmA0dwBEfQDXQD5R3kCJQIqYXAXb+7d3pNQr5C+vKawpUrh8Y1IQ5E3cRPE48chJpW+JnCVE08NfHSReoO1uxE2DXx1cV7E2+0Yh8M12zNjoRNxO5uFb0uWukgXrND4SlEK/1FIWHH8FE7/hYO2JggLjYmftSOZcIBjcZvhqKJc4SnxldsiOilRT7qxj6xMeJ/j9pSYvIp3bAOn03cdf9bPhZ5fFMQkX/HrV+R5TGWyBF/pVDqGyOWiXsuXNW5mUnVtd/PtKeu4VmhDNUfk4Y2+9RXZ1zDs2LdLNr1Fk8aROaEGfUP1/CsXOi7boIgfkuecEAMi6TVhV8Y7nq5wgGxcpHkOK0lxLKMYG/oIdGmhdfIxpEufjQzqQm/d+0p1LVfNM2lhMeTjsVjYbERol1vrwv7xuJFhA3b+3PKS+sXxIsIG7Yk3shD9FnllpWYK01zU9knbUlqf0Nq3JTc5REjps80Vqfi/Bzq6aWLflHVwjGefmtWNH5TxGmRlMJzWkuIAqeeNcMiSYl+np0cy9b0R1UivfN5digcEH0ethxum0g4Cd2lcIyjP2O21LjpadAUNTs5bl2K42DChjjQjzJXrkzwCzVqulZoi3nAAAAAAElFTkSuQmCC"
+    },
+    {
+      "description": "Coins",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAL1SURBVHgB7VjtcdswDH3x9X/cCcJO0HQCsRPEG0SdwN3AyQRpJ7A7QZoJ7ExgbxB1gqQTpHxHoKTk6sOU1D/Ru8NRHwT5CAIgJGDChAkT3gzOkAZTaRUvTgppR0MX0nMnCycfnVh4ovMWHZI+iDw42WFANJG2TlbSEoVMfkCwaBH1f+/kHH5Bl5EY6f/TyW1FZzAYJ1snr9Iu0W7ZJpA4F/8kY65x7Fa9kDt5lgkyDI9cxqYYDAADT5iW6GPZLvMo8d7zrIcaqAMMvKsskYBZdG3hg2XUdCUo4AP6EgmYVe4N/h8G2VGNbovxcSNzcU5mFp4DSVZX0gzGa4wDWvebzKNzPUf35MDYsl0HpMKdiOZoi2FAsksEwyxl/HX0PpO5tQ/bVuPpVhF5RZmDL3CaHxoZh7pqzS1C3MSkq8jknR5GpXnf1ShtRDKZ2EpLaF1BFBU9PcLnCBOxL13iO7pnpsdI7mTMT22kq8oQ5a9CwEQSg6R2cp3DL/YR6djAL3oP7wW31Q58cd8wAJVe0Q1W+jaVAhpDXUAX2etNnKd5sCSnnhNxA79Lm479uYO18cTV1KW8oSytKW+FbiBZrVVqO8RRa6N3fUkvEDLSKYT3CFmsETnKKY++p4vpAit9Ne/HKS87YYwn0b1HRLrtcytOeUaeFQjfgdUUNkfIKvOo/wY+q7RlEupdwe+KFZ0v8O6aO/nATqekPAbohbS5kDqgvBiDchpkcD/IuzPR1aDSBV5IaxE+zQ7ony6PQFfZ1ryLTzN1sSaJXecK/84SK0Tu0WbpJtSlIFqHVs1FeK/WVPwWsmxfhPQOflda50olfRBCBt2+rn+JpEB/Yez0wQxp+AFPNi6AxoCWsmz/HuGppLmln+WaxK8xPCx8jqafs+YpMBAMykGnFZlFe+0RQw8crbu3OC5lB4dBuW7WVutwi/C3SYXPciEZ67QeQm2HSwoyhMJLa+sm6C+2HcK/v8a6ewzSVeghcl55XkibmlUmTJgw4S3gD1Z776jh5NIkAAAAAElFTkSuQmCC"
+    },
+    {
+      "description": "CurrencyEur",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF6SURBVHgB7ZiBTcMwEEU/iAG6AdmAbNBuABvgDWCDZoOyQbsBI1RMQJmg3YBuEO7LZ9EgWuqSxj7VT/pK6jjS5Sd1fg4oFAqFU7hC/0xEd6J6Z2wr2ojeRCtkwkjUiD5FrW7XoqXqXcdbHX9EYp7hi6RmovGeebywe9EcCYtnEQstYKa/j6USveq5DQaCBfKW093/uDWFd3wQXuBdqmEEB1/wEwzB2zmHIRy8yxUMEdZdM3DFoMvJXwzXEXPDSvGBxMQUXek2m+zwG1z42x40Rc8cSnkVujniQeUQB5PdBokIzicn5pnOBpNF3xw4VqMbiMK+w9+skGiVCWH9FGXz1nQw+Efc6vYWhgjZw1SOJuZSHqHL5vI0HxF+zJpz2yGTXB3LAt5xM1/jpK++R4MB+x6EhYcuEd+eVcS5nLvEmfL2MbCXR7foOouf7Jk30mPhQnnOGAmp4Ate4zt/8PEJ6/ruOPfpbkzvr8M5+tN072dCzLI/XSgULo0vidV5HSSLuyQAAAAASUVORK5CYII="
+    },
+    {
+      "description": "HandArrowUp",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHpSURBVHgB7ZeNUcIwGIZfPAZgA+IGdQK6gW5gNoANjBOIEygT6AaUCXQDYQJwAs1nkksoaQ2QK4HLc/cdEPLz9GvzUyCTSR4ug+GMEDJ+ZHzhTMQFlLCJ5MUFlOiD/nyBkk5WXMAKw/nOkKi4wLYwar8ZEhOfYFcYnjIGKz7AiSlk3HvKfRfCZIyRMD7pRq5whmTprsjSXZGlj2Cp43Lp4TBoa6WdrQisv5QxQ6RsHiLNZTxBiX/K2AS0KXT9R6gDU6dw2LPvvgcZc24u0SEcVvhQ5jLe0BEcxwsD9u2kDabHu8MRx1KOOMLEXIeBpEqoIyjdgTV23xnLps4mngZuxBA2LwAkRxP5w+l/rS+GnvuRvhim66xRyzitHoX+cwq1GrgUejDqYIX/ETKGnnKG7YwtZVR6vAV2xzUMtDQ5PJvCPuxVTD1iK90glFv4n8MNbFIqhCXAtEO9zz7icoO4mIRVbmFs6ViUUDsuh7pDC18FmgzDhsZN/8WGHgEONSHN5PS+N6aQaZKlx2Csv1dQyVo0NTiFNInRqlRCLW/0SRPuVcY7WmQNXUjXJc3hiUQrqCzPEHbw+qPvVKbOep4BiWvsdyJkLZIC7WtzMO7uFCtoItHuN0b4uTsIN3sjxOMbETKZyWQyGfwCF6WZNv//lrYAAAAASUVORK5CYII="
+    },
+    {
+      "description": "Target",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALlSURBVHgB7ZjRkdMwEIZ/bngnHWQ7wFRw6eCug5gKch1EV8HRQUIFBxXcUUHoIKaCQAWgRSvkcWJpJctP5JvZ0dher3/Lq5Vk4MqVKxoW1gjTWWAmOHBrbWftYO1k7ffADnJ9Db0QI7HOeINyViLiXoR01l6l7Xp+ZK0RIzm3t/Y48OtjrG2lfUQFWOAnuB48SfBb5b0k/ke5f4fzNDJybYtKrOSBXuyUnNtKHI7XyDmDyoJbCcgPIdSB4PKd4z6jsuCHXuA5RrQXXk1wgyB4DgwqCya4dGCbo4cNKgtmdhKUlP7st7H2JPdyux6532AGwZQRlH1fECaToxwfeueeEcSbROwWhYN9B12l4EHqSxf38jCN/Izpa7OmSpzk+VkQQvFHQjD7PUGX89oq4Wt41jhqJXgT8SEEwRoM8tKNfdfIgD/hMeGzU/h4DPIH3RGZKcKfMVaXCfqeMCirEjmd8pfUQ1rxSeWcQZlghgf1SetMSPci5/EBcQzigh8Sz2gx0jE3KIMD/Yxc5wGcWg/fwa0aU7wbnniLMlgwRa5/t/ZB2jFSL+75NTxxqac7aQnjdHI9ltMpwQ3Gdy7MUtqzF7tJiBrjs7RZdbTHvbRfIz78UrEXP0NTbl5Qvvrza5MYqbJ7BpcbHrnLiA/BlSTtjOjx+0tKxM6eERfQ1df+2kMT0wveJHy3yFsS/4M/n2bR4oXzJ1/j8ipvg7DKSwkGCqZwzwp5Cxy/YWDjfPQ578/xcaOIZZDo5dTPGh4IK7ia2yENif97hB7nCvDF2g/l/Qfx/4hCCC5FUlN2Lfx+lDCRFXQbgqns5Tm3qIQfzXMI5zTaY4ZNLhCEV/l8AiFswTRVpQieflk057lBOQuEX7ls1VJiDEIob0d5OGXcy/7+H3bRb7Yp/6cJLmVaOebS1knbL29LhFJIcu4VTvw3FDBFtIfgBN0h/EAf0sEJ5RfiFaJmHT1KDdGX6C+0NJPKlSv/NX8AVS7lQY45TqYAAAAASUVORK5CYII="
+    },
+    {
+      "description": "MoneyWavy",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAtCAYAAADV2ImkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJeSURBVHgB7ZiNbdswEIVfig7gbsBOUG9gbZBsUGWCdIO2EwSdoMoEaSaIMkHUCaxOkG6g8vmOIK0qIm1TQRDwAw6ySMp+Iu+HNFAoFAqFwgGczfStrF1Y+2TNqK20r7f2V68P1jr9vDhjwRT0GSK0ghfXBQKJgX+BdTCutXaj18X5Yu3J2mDt3toV/IzOwTHn1n5a2+rzW72/wGlUquVxqnPQHzE4Dc74Nbx4TsItZOXWCc9X1r5BhA7wE7AjdAl21JAlzQUFbrDvYmTsYlwlA+9m7PtlrdHnamsfOfA9lqVT+6FCGMBrFeauUIGdCuT1t7YB+y+6uOAQCnhQO5p3kf4K4tevhtgM0/8qHMYaPrhaZM7POV2CPspsUI3aG2vfkUl4zCUOgWnIQAR/gGSgS72/TfwOpq/zuQG5ZriGuAFTTx+0N5CoZ+JnHo6lTINIsco1wxTDvNlP9FFwi9Or3o5cgl2yf44eaWU+Si7BPeZLehaxJJfgO0hwTe0VDMQdGmQgJvgP5pfa0UB81W1yiNtP32tfzj3KjiH4sWMwkKo4jIyCU11iSsNXBLu1nIWjh+RdFomNtnET0yEjS2x+ehxf1RqIGz7LS+7WUriMDYgJruD3sCvs+6I7eLplTwnOk5kSXMEfRF1B6LG/1Ab/p7EWUu3cKXpxxpHN6NwkPEfRNSSluUMso/oaaWe4OYx+73aq81GFpoicY+4EnXoKv4I/hD7p/Y4zLAtfvoa4j9G28ADaa5uB/4/DjWshLnaDID6WFhxiIAFcwQs02he+AF/oDi8UxIVCoVB44/wDCQ+W4Gq8+O0AAAAASUVORK5CYII="
+    }
+  ],
+  "dataColors": [
+    "#1A4183",
+    "#2966CF",
+    "#85ADF1",
+    "#26B0D2",
+    "#FFC1CB",
+    "#EB5559",
+    "#AE3535",
+    "#8E1F20"
+  ],
+  "tableAccent": "#262A76",
+  "good": "#1AAB40",
+  "neutral": "#D9B300",
+  "bad": "#D64554",
+  "maximum": "#262A76",
+  "center": "#8E1F20",
+  "minimum": "#F1F1F1",
+  "foreground": "#252423",
+  "foregroundNeutralSecondary": "#605E5C",
+  "backgroundLight": "#F3F2F1",
+  "foregroundNeutralTertiary": "#B3B0AD",
+  "background": "#FFFFFF",
+  "backgroundNeutral": "#C8C6C4",
+  "textClasses": {
+    "callout": {
+      "fontFace": "DIN",
+      "color": "#252423",
+      "fontSize": 45
+    },
+    "title": {
+      "fontFace": "DIN",
+      "color": "#252423",
+      "fontSize": 12
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#252423",
+      "fontSize": 12
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "color": "#252423",
+      "fontSize": 10
+    },
+    "smallLightLabel": {
+      "color": "#605E5C",
+      "fontSize": 9
+    },
+    "largeLightLabel": {
+      "color": "#605E5C",
+      "fontSize": 12
+    },
+    "boldLabel": {
+      "fontFace": "Segoe UI Bold"
+    },
+    "lightLabel": {
+      "color": "#605E5C"
+    },
+    "smallLabel": {
+      "fontSize": 9
+    },
+    "largeLabel": {
+      "fontSize": 12
+    },
+    "semiboldLabel": {
+      "fontFace": "Segoe UI Semibold"
+    },
+    "largeTitle": {
+      "fontSize": 14
+    }
+  },
+  "visualStyles": {
+    "tableEx": {
+      "*": {
+        "general": [
+          {
+            "layout": "Tabular",
+            "autoSizeColumnWidth": false
+          }
+        ]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "general": [
+          {
+            "layout": "Tabular",
+            "autoSizeColumnWidth": false
+          }
+        ]
+      }
+    },
+    "barChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "clusteredBarChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "columnChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "clusteredColumnChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "lineStackedColumnComboChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "lineClusteredColumnComboChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "areaChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "stackedAreaChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "pieChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "donutChart": {
+      "*": {
+        "general": [
+          {
+            "responsive": true
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "labelDisplayUnits": 1
+          }
+        ]
+      }
+    },
+    "multiRowCard": {
+      "*": {
+        "dataLabels": [
+          {
+            "dataLabelDisplayUnits": 1
+          }
+        ]
+      }
+    },
+    "gauge": {
+      "*": {
+        "labels": [
+          {
+            "labelDisplayUnits": 1
+          }
+        ],
+        "target": [
+          {
+            "labelDisplayUnits": 1
+          }
+        ]
+      }
+    },
+    "scatterChart": {
+      "*": {
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "xAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "yAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "waterfallChart": {
+      "*": {
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "categoryAxis": [
+          {
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "labelDisplayUnits": 1
+          }
+        ],
+        "dataLabels": [
+          {
+            "show": true,
+            "dataLabelDisplayUnits": 1,
+            "dataLabelPrecision": 0
+          }
+        ]
+      }
+    },
+    "actionButton": {
+      "*": {
+        "padding": [
+          {
+            "topMargin": 5,
+            "bottomMargin": 5,
+            "leftMargin": 5,
+            "rightMargin": 5
+          }
+        ]
+      }
+    },
+    "cardVisual": {
+      "*": {
+        "value": [
+          {
+            "$id": "default",
+            "labelDisplayUnits": 1
+          }
+        ]
+      }
+    }
+  }
+}
